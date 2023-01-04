@@ -1,0 +1,132 @@
+/* 
+
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+
+- Font weights:
+
+- Line heights: 
+Default: 1
+
+
+
+
+--- 02 COLORS
+
+- Primary: #e67e22
+- Tints: #fdf2e9
+- Shades: #cf711f
+- Accents: 
+- Greys: 
+#555
+#333
+
+--- 05 SHADOWS
+
+--- 06 BORDER-RADIUS
+
+--- 07 WHITESPACE
+- Spacing System (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+
+html {
+    /* font-size: 10px; este es el valor del rem, para que no quede fijo y cuando el usuario quiera agrandar la fuente de la pagina no le funcione
+    en vez de setear pixeles seteamos un porcentaje del default font-size */
+    font-size: 62.5%; /* el default es 16px, para obtener 10px saco el porcentaje */
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+
+}
+
+.section-hero {
+    background-color: #fdf2e9;
+    padding: 9.6rem 0;
+}
+
+.hero {
+    max-width: 130rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 9.6rem;
+}
+
+.heading-primary {
+    font-size: 5.2rem; /* equivale a 52 pixels porque defini
+    la fontsize de html en 10px  */
+    font-weight: 700;
+    line-height: 1.05;
+    color: #333;
+    letter-spacing: -0.5px;
+    margin-bottom: 3.2rem;
+}
+
+.hero-description {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 4.8rem;
+}
+
+.btn:link, .btn:visited {
+    font-size: 2rem;
+    padding: 1.6rem 3.2rem;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 9px;
+
+    /* animacion para el hovering */
+    transition: all 0.3s;
+}
+
+.btn--full:link, .btn--full:visited {
+    background-color: #e67e22;
+    color: white;
+}
+
+.btn--full:hover, .btn--full:active {
+    background-color: #cf711f;
+    color: white;
+}
+
+.btn--outline:link, .btn--outline:visited {
+    background-color: white;
+    color: #555;
+}
+
+.btn--outline:hover, .btn--outline:active {
+    background-color: #fdf2e9;
+    color: #555;
+    /* border: 3px solid white; esto te agrega pixeles, entonces hovereas y se te mueve todo, se arregla 
+    haciendo esto en vez> */
+    box-shadow: inset 0 0 0 3px #fff;
+}
+
+.hero-img {
+    width: 100%;
+}
+
+
+.margin-right-sm {
+    margin-right: 1.6rem !important;
+}
+
+

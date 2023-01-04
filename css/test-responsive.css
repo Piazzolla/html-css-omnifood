@@ -1,0 +1,26 @@
+html {
+    /* font-size: 10px; este es el valor del rem, para que no quede fijo y cuando el usuario quiera agrandar la fuente de la pagina no le funcione
+    en vez de setear pixeles seteamos un porcentaje del default font-size */
+    font-size: 62.5%; /* el default es 16px, para obtener 10px saco el porcentaje */
+
+}
+
+.test {
+    background-color: red;
+    padding: 100px;
+    /* width: 1000px; */
+
+    /* max-width: 1000px; si el view width es mayor a mil px va a medir 1000px, si es menor se ajusta al 100% del width del container */
+
+    max-width: 50rem;
+    color: white;
+    font-size: 2rem;
+    padding: 4rem;
+}
+
+/* 
+    rem: root element font-size
+    normalmente el html, si no definimos font-size el default es 16px;
+
+*/
+
