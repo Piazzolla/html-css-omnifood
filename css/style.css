@@ -15,9 +15,12 @@ Bold: 700
 - Line heights: 
 Default: 1
 Small: 1.05
+medium: 1.2
 Paragraph default: 1.6
 
-
+- Letter spacing
+-0.5px
+0.75px
 
 --- 02 COLORS
 
@@ -44,7 +47,8 @@ Default: 9px
 html {
     /* font-size: 10px; este es el valor del rem, para que no quede fijo y cuando el usuario quiera agrandar la fuente de la pagina no le funcione
     en vez de setear pixeles seteamos un porcentaje del default font-size */
-    font-size: 62.5%; /* el default es 16px, para obtener 10px saco el porcentaje */
+    font-size: 62.5%;
+    /* el default es 16px, para obtener 10px saco el porcentaje */
 
 }
 
@@ -81,24 +85,47 @@ body {
 }
 
 .grid--2-cols {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
+
 .grid--3-cols {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
-
-.heading-primary {
-    font-size: 5.2rem; /* equivale a 52 pixels porque defini
-    la fontsize de html en 10px  */
+.heading-primary,
+.heading-secondary {
     font-weight: 700;
-    line-height: 1.05;
     color: #333;
     letter-spacing: -0.5px;
+}
+
+.heading-primary {
+    font-size: 5.2rem;
+    /* equivale a 52 pixels porque defini
+    la fontsize de html en 10px  */
+    line-height: 1.05;
     margin-bottom: 3.2rem;
 }
 
-.btn:link, .btn:visited {
+.heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 9.6rem;
+}
+
+.subheading {
+    display: block; /* acordarse de que span es inline por default */
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #cf711f;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.75px;
+}
+
+
+.btn:link,
+.btn:visited {
     font-size: 2rem;
     font-weight: 600;
     display: inline-block;
@@ -110,22 +137,26 @@ body {
     transition: all 0.3s;
 }
 
-.btn--full:link, .btn--full:visited {
+.btn--full:link,
+.btn--full:visited {
     background-color: #e67e22;
     color: white;
 }
 
-.btn--full:hover, .btn--full:active {
+.btn--full:hover,
+.btn--full:active {
     background-color: #cf711f;
     color: white;
 }
 
-.btn--outline:link, .btn--outline:visited {
+.btn--outline:link,
+.btn--outline:visited {
     background-color: white;
     color: #555;
 }
 
-.btn--outline:hover, .btn--outline:active {
+.btn--outline:hover,
+.btn--outline:active {
     background-color: #fdf2e9;
     color: #555;
     /* border: 3px solid white; esto te agrega pixeles, entonces hovereas y se te mueve todo, se arregla 
@@ -147,13 +178,14 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #fdf2e9;
-    height: 9.6rem; /* para después poder hacerlo sticky es un poco más fácil si le pongo una height fija */
+    height: 9.6rem;
+    /* para después poder hacerlo sticky es un poco más fácil si le pongo una height fija */
     padding: 0 4.8rem;
 
 }
 
 .logo {
-   height: 2.2rem; 
+    height: 2.2rem;
 }
 
 .main-nav-list {
@@ -178,7 +210,8 @@ body {
     color: #cf711f;
 }
 
-.main-nav-link.nav-cta:link, .main-nav-link.nav-cta:visited {
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
     /* agrego .main-nav-link para que la specificity suba 
     y resuelva los conflictos eligien do este estilo y no
     el definido en .main-nav-link:link */
@@ -189,9 +222,10 @@ body {
 }
 
 
-.main-nav-link.nav-cta:hover, .main-nav-link.nav-cta:active {
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
     background-color: #cf711f;
-} 
+}
 
 /******************************/
 /* HERO SECTION */
@@ -259,7 +293,7 @@ body {
 }
 
 .delivered-text span {
-    color:#cf711f;
+    color: #cf711f;
     font-weight: 700;
 }
 
@@ -269,6 +303,10 @@ body {
 
 .section-how {
     padding: 9.6rem 0;
-    background-color: orangered;
 }
 
+
+.step-img {
+    width: 50%;
+
+}
