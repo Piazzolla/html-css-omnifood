@@ -172,8 +172,8 @@
 
 
 
-.step-number { 
-    font-size: 8.6rem; 
+.step-number {
+    font-size: 8.6rem;
     font-weight: 600;
     color: #ddd;
     margin-bottom: 1.2rem;
@@ -187,7 +187,7 @@
 
 .step-img-box {
     position: relative;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,17 +204,18 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
 }
+
 .step-img-box:before {
-    
+
     width: 60%;
-    
+
     padding-bottom: 60%;
     /*height: 60%;*/
     background-color: #fdf2e9;
     z-index: -2;
-    
+
 }
 
 .step-img-box:after {
@@ -223,6 +224,7 @@
     background-color: #fae5d3;
     z-index: -1;
 }
+
 .step-img {
     width: 35%;
 }
@@ -238,19 +240,21 @@
 
 
 .meal {
-    box-shadow: 0 2.4rem 4.8rem rgba(0,0,0,0.075);
+    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
     border-radius: 11px;
-    overflow: hidden; /* con esto hago que redondee tambien las esquinas de la imagen que sobresale de la card */
-    
-    transition: all 0.4s; /* para el hover */
+    overflow: hidden;
+    /* con esto hago que redondee tambien las esquinas de la imagen que sobresale de la card */
+
+    transition: all 0.4s;
+    /* para el hover */
 }
 
 .meal:hover {
-    transform: translateY( -1.2rem );
+    transform: translateY(-1.2rem);
     /* le sumo  el 1.2rem que estoy 
     usanod en el transalte a la sombra
     y la hago un poco más difusa*/
-    box-shadow: 0 3.2rem 6.4rem rgba(0,0,0,0.06);
+    box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
 
 }
 
@@ -277,9 +281,11 @@
 .tag--vegetarian {
     background-color: #51cf66;
 }
+
 .tag--vegan {
     background-color: #94d82d;
 }
+
 .tag--paleo {
     background-color: #ffd43b;
 }
@@ -342,3 +348,33 @@
 }
 
 
+/*****************************/
+/* SECTION MEALS */
+/*****************************/
+
+section-testimonials {
+    padding: 9.6rem 0;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.8rem;
+}
+
+.testimonial-img {
+    width: 6.4rem;
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+    font-size: 1.6rem;
+    color: #777;
+}
