@@ -87,6 +87,33 @@ body {
     display: grid;
     column-gap: 6.4rem;
     row-gap: 9.6rem;
+
+}
+
+/*
+
+.grid {
+    margin-bottom: 9.6rem;
+}
+
+.grid:last-child {  
+    seteo un margin bottom en grid general pero si es last child le pongo cero
+    de esta manera si tengo mas de una grid en una misma seccion aplica el margin botom 
+    a las primeras y no a la ultima. Si tengo una sola grid le aplica el 0.
+  
+    margin-bottom: 0;
+}
+
+esto equivale a 
+.grid:not(:last-child) {
+    margin-bottom: 9.6rem;
+}
+
+y uso este porque es mas corto
+*/
+
+.grid:not(:last-child) {
+    margin-bottom: 9.6rem;
 }
 
 .grid--2-cols {
@@ -95,6 +122,10 @@ body {
 
 .grid--3-cols {
     grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .grid--center-v {
@@ -223,6 +254,7 @@ body {
 
 
 /* HELPER/SETTINGS CLASSES */
+/* me sirven para overridear settings que puse por default */
 .margin-right-sm {
     margin-right: 1.6rem !important;
 }
