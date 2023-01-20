@@ -31,6 +31,7 @@ Paragraph default: 1.6
 #eb984e
 
 - Shades: #cf711f
+#45260a
 - Accents: 
 - Greys: 
 #6F6F6F: lightest gray allowd on #fdf2e9
@@ -176,6 +177,7 @@ y uso este porque es mas corto
 }
 
 
+.btn, /* si no pongo esto necesita tener un href para que lo selecciones con link y visited  */
 .btn:link,
 .btn:visited {
     font-size: 2rem;
@@ -187,6 +189,12 @@ y uso este porque es mas corto
 
     /* animacion para el hovering */
     transition: all 0.3s;
+
+
+    /* Only necessary for .btn */
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .btn--full:link,
@@ -214,6 +222,23 @@ y uso este porque es mas corto
     /* border: 3px solid white; esto te agrega pixeles, entonces hovereas y se te mueve todo, se arregla 
     haciendo esto en vez> */
     box-shadow: inset 0 0 0 3px #fff;
+}
+
+
+.btn--form {
+    background-color: #45260a;
+    color: #fdf2e9;
+    align-self: end; /* Uso el align-self porque no quiero esto para todos los grid
+    items, solamente para este que es el boton.
+    Con esto logro que el boton no ocupe todo el height de la grid cell y que se alinie abajo y quede a la altura del select */
+
+    padding: 1.2rem; /* sobreescribo el padding que habia definido para botones para
+    que me quede de la misma altura que el select */
+}
+
+.btn--form:hover {
+    background-color: #fff;
+    color: #555;
 }
 
 .link:link,
@@ -258,6 +283,16 @@ y uso este porque es mas corto
 }
 
 
+*:focus {
+    outline: none;
+    /* outline: 4px dotted #e67e22; esta es una forma pero no redondea las esquinas
+    outline-offset: 8px; */
+
+    box-shadow: 0 0 0 0.8rem rgb(230, 126, 34, 0.5);
+
+}
+
+
 /* HELPER/SETTINGS CLASSES */
 /* me sirven para overridear settings que puse por default */
 .margin-right-sm {
@@ -275,3 +310,4 @@ y uso este porque es mas corto
 strong {
     font-weight: 500;
 }
+
