@@ -10,6 +10,7 @@
     height: 9.6rem;
     /* para después poder hacerlo sticky es un poco más fácil si le pongo una height fija */
     padding: 0 4.8rem;
+    position: relative;
 
 }
 
@@ -55,6 +56,31 @@
 .main-nav-link.nav-cta:active {
     background-color: #cf711f;
 }
+
+/* MOBILE */
+
+.btn-mobile-nav {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: none;
+}
+
+.icon-mobile-nav {
+    height: 4.8rem;
+    width: 4.8rem;
+    color: #333;
+}
+
+
+.icon-mobile-nav[name="close-outline"] {
+    display: none;
+}
+
+.icon-mobile-nav[name="menu-outline"] {
+
+}
+
 
 /******************************/
 /* HERO SECTION */
@@ -515,7 +541,7 @@
 
 .cta {
     display: grid;
-    /* 2/3 del width: texto y from / imagen */
+    /* 2/3 del width: texto y from / 1/3 del width:  imagen */
     grid-template-columns: 2fr 1fr;
     background-color: #e67e22;
     box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);

@@ -12,7 +12,7 @@ we use rem here.
 /* BELOW 1344px (smaller desktops) */
 /***********************************/
 
-@media( max-width: 84em) {
+@media(max-width: 84em) {
     .hero {
         max-width: 120rem;
     }
@@ -32,7 +32,7 @@ we use rem here.
 /* BELOW 1200px (landscape tablets) */
 /************************************/
 
-@media( max-width: 75em) {
+@media(max-width: 75em) {
     html {
         /* 9px / 16px */
         font-size: 56.25%;
@@ -59,6 +59,7 @@ we use rem here.
     .main-nav-list {
         gap: 3.2em;
     }
+
     .hero {
         gap: 4.8rem;
     }
@@ -73,7 +74,7 @@ we use rem here.
 /* BELOW 944px (tablets) */
 /************************************/
 
-@media( max-width: 59em) {
+@media(max-width: 59em) {
     html {
         font-size: 50%;
     }
@@ -84,7 +85,8 @@ we use rem here.
         padding: 0 8rem;
     }
 
-    .hero-text-box, .hero-img-box {
+    .hero-text-box,
+    .hero-img-box {
         text-align: center;
     }
 
@@ -128,4 +130,66 @@ we use rem here.
     .btn--form {
         margin-top: 1.2rem;
     }
+
+
+    /* MOBILE NAVIGATION */
+    .btn-mobile-nav {
+        display: block;
+    }
+
+    .main-nav {
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transform: translateX( 100% );
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        /* Hide navigation */
+        /* Allows no transitions at all */
+        /* display: none; */
+
+        /* 1) HIde it visually*/
+        opacity: 0;
+        transition: all 0.5s ease-in;
+
+        /* 2) make it unaccessible to mouse and keyboard */
+        pointer-events: none;
+
+        /* 3) hide it from screen readers */
+        visibility: hidden;
+
+    }
+
+    .main-nav-list {
+        flex-direction: column;
+        gap: 4.rem;
+    }
+
+    .main-nav-link:link,
+    .main-nav-link:visited {
+        font-size: 3rem;
+    }
+
+    .nav-open .main-nav {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(0);
+
+    }
+
+    .nav-open .icon-mobile-nav[name="close-outline"] {
+        display: block;
+    }
+
+    .nav-open .icon-mobile-nav[name="menu-outline"] {
+        display: none;
+    }
+
 }

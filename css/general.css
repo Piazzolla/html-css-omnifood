@@ -63,7 +63,8 @@ html {
     en vez de setear pixeles seteamos un porcentaje del default font-size */
     font-size: 62.5%;
     /* el default es 16px, para obtener 10px saco el porcentaje */
-
+    
+    overflow-x: hidden;
 }
 
 * {
@@ -78,6 +79,9 @@ body {
     font-weight: 400;
     color: #555;
     font-family: 'Rubik', sans-serif;
+
+    /* only works if there is nothing absolutely positioned in relation to body */
+    overflow-x: hidden;
 
 }
 
