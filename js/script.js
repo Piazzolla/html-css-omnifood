@@ -2,7 +2,7 @@
 
 /* Set current year */
 const yearEl = document.querySelector('.year');
-yearEl.textContent =  new Date().getFullYear();
+yearEl.textContent = new Date().getFullYear();
 
 
 // Make mobile navigation work
@@ -12,29 +12,47 @@ btnNavEl.addEventListener('click', () => {
   headerEl.classList.toggle('nav-open');
 });
 
-
 /* Smooth scrolling animation for all browsers */
 const allLinks = document.querySelectorAll('a:link');
-allLinks.forEach( link => {
+allLinks.forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     const href = link.getAttribute('href');
 
     /* Scroll back to the top */
-    if(href === "#") window.scrollTo({top: 0, behavior: "smooth"});
+    if (href === "#") window.scrollTo({ top: 0, behavior: "smooth" });
 
-    if(href !== "#" && href.startsWith('#')) {
+    if (href !== "#" && href.startsWith('#')) {
       const section = document.querySelector(href);
-      section.scrollIntoView({ behavior: "smooth"});
+      section.scrollIntoView({ behavior: "smooth" });
 
       /* Cierro elmenu si esta abierto */
       const headerEl = document.querySelector('.header');
-      if(headerEl.classList.contains('nav-open')) {
+      if (headerEl.classList.contains('nav-open')) {
         headerEl.classList.toggle('nav-open')
       }
     }
   })
 })
+
+/******************************* */
+// Sticky navigation 
+/******************************* */
+const sectionHeroEl = document.querySelector('.section-hero');
+const observer = new IntersectionObserver(function (entries) {
+  const ent = entries[0];
+  if(ent.isIntersecting) {
+    document.body.classList.remove('sticky');
+  } else {
+    document.body.classList.add('sticky');
+  }
+}, {
+  // In the viewport
+  root: null,
+  threshold: 0,
+  rootMargin: "-80px" /* igual a los 8 rem que le puse de height */
+});
+observer.observe(sectionHeroEl);
 
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
