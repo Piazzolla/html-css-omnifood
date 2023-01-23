@@ -141,7 +141,10 @@ we use rem here.
     }
 
     .main-nav {
-        background-color: white;
+        backdrop-filter: blur(10px); /* blurrea las cosas que estan atras */
+        -webkit-backdrop-filter: blur(10px); /* esto es para que ande en safari */
+        background-color: rgba(255,255,255, 0.9);
+
         position: absolute;
         top: 0;
         left: 0;
