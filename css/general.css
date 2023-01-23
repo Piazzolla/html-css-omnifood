@@ -65,6 +65,12 @@ html {
     /* el default es 16px, para obtener 10px saco el porcentaje */
     
     overflow-x: hidden;
+
+    /* con esto baja lindo desde el click a la seccion
+    pero no anda en Safari que es el unico browser de 
+    iphone y ipad... 
+    tampoco en edge aparentemente */
+    /* scroll-behavior: smooth; */
 }
 
 * {
@@ -82,6 +88,7 @@ body {
 
     /* only works if there is nothing absolutely positioned in relation to body */
     overflow-x: hidden;
+
 
 }
 

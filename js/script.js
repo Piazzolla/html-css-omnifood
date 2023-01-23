@@ -13,6 +13,29 @@ btnNavEl.addEventListener('click', () => {
 });
 
 
+/* Smooth scrolling animation for all browsers */
+const allLinks = document.querySelectorAll('a:link');
+allLinks.forEach( link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const href = link.getAttribute('href');
+
+    /* Scroll back to the top */
+    if(href === "#") window.scrollTo({top: 0, behavior: "smooth"});
+
+    if(href !== "#" && href.startsWith('#')) {
+      const section = document.querySelector(href);
+      section.scrollIntoView({ behavior: "smooth"});
+
+      /* Cierro elmenu si esta abierto */
+      const headerEl = document.querySelector('.header');
+      if(headerEl.classList.contains('nav-open')) {
+        headerEl.classList.toggle('nav-open')
+      }
+    }
+  })
+})
+
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
