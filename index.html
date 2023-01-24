@@ -75,9 +75,17 @@
                     </div>
                 </div>
                 <div class="hero-img-box">
-                    <img class="hero-img"
+                    <!-- Para señalarle dos posibles sources para una sola imagen al browser hacemos esto: -->
+                    <picture> 
+                        <source srcset="img/hero.webp" type="image/webp" />
+                        <source srcset="img/hero.png" type="image/webp" />
+                        <img class="hero-img"
                         alt="Woman enjoying food, meals in storage container, and food bowls on a table"
-                        src="img/hero.png" />
+                        src="img/hero.png" /> 
+                    </picture>
+                    <!-- también anda para videos. Esto lo hacemos por compatibilidad del formato con el browser. Buscar esto en caniuse.com. 
+                    OJO. el src acá dice img/hero.png y en el html va a figurar así pero el archivo que va a usar es el primero que definí, el webp. Si no puede usar ese ahí va a usar el png. -->
+
                 </div>
             </div>
 
